@@ -25,7 +25,7 @@ def chunk_text_with_openai(result, chunk_size=750):
     return chunks
 
 # Splitting array and prettifying chunks using chunk_text_with_openai to process and format chunks properly
-def split_array_by_length_with_llm(output, arr, max_length):
+def split_array_by_length(output, arr, max_length):
     current_chunk = []
     current_length = 0
 

@@ -3,7 +3,7 @@ import openai
 import requests
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
-from helperFunctions import split_array_by_length_with_llm
+from helperFunctions import split_array_by_length
 
 # Setting api token to connect to openai llm
 load_dotenv()
@@ -106,7 +106,7 @@ def process_data_into_chunks(arr):
                         temp_chunk.append(answer_text)
 
         # Splitting arrays into chunks of 750 (tried Bloom, Cohere, Huggingface, but was taking too long to run locally so went with OpenAI)
-        split_array_by_length_with_llm(output, temp_chunk, 750)
+        split_array_by_length(output, temp_chunk, 750)
     
     # Return our output array of chunks once we've gone through all article urls
     return arr
